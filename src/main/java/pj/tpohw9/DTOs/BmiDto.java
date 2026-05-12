@@ -4,7 +4,7 @@ public class BmiDto {
     float weight;
     float height;
     float bmi;
-    String bmiCategory;
+    String type;
 
     public float getWeight() {
         return weight;
@@ -31,10 +31,10 @@ public class BmiDto {
     }
 
     public String getBmiCategory() {
-        return bmiCategory;
+        return type;
     }
 
     public void setBmiCategory(String bmiCategory) {
-        this.bmiCategory = bmiCategory;
+        this.type = bmiCategory;
     }
 }

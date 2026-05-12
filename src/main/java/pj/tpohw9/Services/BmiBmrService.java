@@ -9,9 +9,9 @@ import pj.tpohw9.DTOs.BmrDto;
 public class BmiBmrService {
 
     public BmiDto CalculateBMI(float weight, float height) {
-        if (weight < 0.0) throw new IllegalArgumentException("Weight can't be negative");
+        if (weight <= 0.0) throw new IllegalArgumentException("Weight can't be negative");
 
-        if (height < 0.0) throw new IllegalArgumentException("Height can't be negative");
+        if (height <= 0.0) throw new IllegalArgumentException("Height can't be negative");
 
         var heightConversed = height / 100;
         var bmi = (float) (weight / Math.pow(heightConversed, 2));
@@ -26,11 +26,11 @@ public class BmiBmrService {
     }
 
     public BmrDto CalculateBMR(String gender, float weight, float height, int age) {
-        if (weight < 0.0) throw new IllegalArgumentException("Weight can't be negative");
+        if (weight <= 0.0) throw new IllegalArgumentException("Weight can't be negative");
 
-        if (height < 0.0) throw new IllegalArgumentException("Height can't be negative");
+        if (height <= 0.0) throw new IllegalArgumentException("Height can't be negative");
 
-        if (age < 0) throw new IllegalArgumentException("Age can't be negative");
+        if (age <= 0) throw new IllegalArgumentException("Age can't be negative");
 
         float brm;
         if (gender.equalsIgnoreCase("man")) {
