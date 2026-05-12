@@ -14,7 +14,7 @@ public class BmiBmrService {
         if (height <= 0.0) throw new IllegalArgumentException("Height can't be negative");
 
         var heightConversed = height / 100;
-        var bmi = (float) (weight / Math.pow(heightConversed, 2));
+        var bmi = (int) (weight / Math.pow(heightConversed, 2));
         var type = BmiCategory.classify(bmi).toString();
 
         BmiDto dto = new BmiDto();
@@ -32,11 +32,11 @@ public class BmiBmrService {
 
         if (age <= 0) throw new IllegalArgumentException("Age can't be negative");
 
-        float brm;
+        int bmr;
         if (gender.equalsIgnoreCase("man")) {
-            brm = (float) ( 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age));
+            bmr = (int) ( 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age));
         } else if (gender.equalsIgnoreCase("woman")) {
-            brm = (float) ( 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age));
+            bmr = (int) ( 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age));
         } else {
             throw new IllegalArgumentException("The gender is not right");
         }
@@ -46,7 +46,7 @@ public class BmiBmrService {
         dto.setGender(gender);
         dto.setWeight(weight);
         dto.setHeight(height);
-        dto.setBmr(brm);
+        dto.setBmr(bmr);
         return dto;
     }
 }

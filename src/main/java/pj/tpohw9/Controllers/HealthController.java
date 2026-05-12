@@ -8,12 +8,18 @@ import pj.tpohw9.Services.BmiBmrService;
 
 
 @RestController
-@RequestMapping("/api/v1")
-public class ExchangeController {
+@RequestMapping(
+        path = "/api/v1",
+        produces = {
+                org.springframework.http.MediaType.APPLICATION_JSON_VALUE,
+                org.springframework.http.MediaType.APPLICATION_XML_VALUE
+        }
+)
+public class HealthController {
 
     private final BmiBmrService service;
 
-    public ExchangeController(BmiBmrService service) {
+    public HealthController(BmiBmrService service) {
         this.service = service;
     }
 

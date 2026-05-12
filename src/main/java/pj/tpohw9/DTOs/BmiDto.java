@@ -3,7 +3,7 @@ package pj.tpohw9.DTOs;
 public class BmiDto {
     float weight;
     float height;
-    float bmi;
+    int bmi;
     String type;
 
     public float getWeight() {
@@ -22,11 +22,11 @@ public class BmiDto {
         this.height = height;
     }
 
-    public float getBmi() {
+    public int getBmi() {
         return bmi;
     }
 
-    public void setBmi(float bmi) {
+    public void setBmi(int bmi) {
         this.bmi = bmi;
     }
 

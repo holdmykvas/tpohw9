@@ -5,7 +5,7 @@ public class BmrDto {
     float weight;
     float height;
     int age;
-    float bmr;
+    int bmr;
 
     public String getGender() {
         return gender;
@@ -39,11 +39,11 @@ public class BmrDto {
         this.age = age;
     }
 
-    public float getBmr() {
+    public int getBmr() {
         return bmr;
     }
 
-    public void setBmr(float bmr) {
+    public void setBmr(int bmr) {
         this.bmr = bmr;
     }
 }
